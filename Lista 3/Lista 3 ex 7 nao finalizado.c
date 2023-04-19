@@ -1,22 +1,30 @@
 //Lista 03 ex 07
-//programa deve ler o valor da despesa a ser paga (real) e a forma de pagamento
+//Programa para exibir o troco do cliente dependendo da forma de pagamento
+//D para débito, C para crédito e N para dinheiro
 #include<stdio.h>
-float pagamento_dinheiro (float vdespesa)
+float pagamento_dinheiro (float vdespesa, float vpago)
 {
-	float vdespesa, vpago;
-	if (vpago > vdespesa)
-		{
-			troco = vpago - vdespesa;
-			printf("O troco e de: %.2f", troco);
-		}
-	if (vpago == vdespesa)
-		{
-			printf("Nao ha troco");
-		}
+	float troco;
+	troco = vpago - vdespesa;
+	return troco;
 }
-float main()
+void main()
 {
-	dec variav
-	printf("Digite a forma de pagamento(D-debito, C-credito e N-dinheiro):");
+	float valorconta, valortroco;
+	int mpgto, valorpago;
+	printf("Digite o valor a ser pago:");
+	scanf("%f", &valorconta);
+	printf("Digite o metodo de pagamento:");
+	scanf("%d", &mpgto);
 	
+	if (mpgto == 'D' && mpgto == 'C')
+		printf("Nao ha troco");
+		
+	if (mpgto == 'N')
+	{
+		printf("Valor pago:");
+		scanf("%f", &valorpago);
+		valortroco = pagamento_dinheiro (valorconta, valorpago);
+		printf("O valor do troco e: %.2f", valortroco);
+	}
 }
