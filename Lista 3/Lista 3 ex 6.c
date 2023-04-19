@@ -1,11 +1,10 @@
-//Programa p calcular o salário de um funcionário a partir da matrícula, valor da hora e qtde de hrs
-//Programa deve exibir a matrícula, o salário base, o desconto do INSS, desconto IR e o salário liq.
+//Programa p calcular o salÃ¡rio de um funcionÃ¡rio a partir da matrÃ­cula, valor da hora e qtde de hrs
+//Programa deve exibir a matrÃ­cula, o salÃ¡rio base, o desconto do INSS, desconto IR e o salÃ¡rio liq.
 #include<stdio.h>
 float salarioBase (int horast, float valorhora)
 {
-	int horastrab;
-	float vhora, salario_base;
-	salario_base = horastrab * vhora;
+	float salario_base;
+	salario_base = horast * valorhora;
 	return salario_base;
 }
 float descontoInss (float salario_base)
@@ -20,7 +19,7 @@ float descontoInss (float salario_base)
 	else
 		return desconto_inss;
 }
-float descontoIR (salario_base)
+float descontoIR (float salario_base)
 {
 	float desconto_IR;
 	if (salario_base <= 1800)
@@ -43,7 +42,7 @@ void main()
 {
 	int matricula, horastrab;
 	float valorhora, salario, desconto1, desconto2, salarioliquido;
-	printf("Digite sua matrícula:");
+	printf("Digite sua matrÃ­cula:");
 	scanf("%d", &matricula);
 	printf("Digite o valor recebido por hora:");
 	scanf ("%f", &valorhora);
