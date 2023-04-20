@@ -1,4 +1,4 @@
-Estrutura de repetição 'Switch'
+Estrutura de Decisão 'Switch'
 _ Usado para faze testes condicionais
 //exemplo retirado do youtube
 switch(num)
