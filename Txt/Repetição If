@@ -1,5 +1,5 @@
-Pac - resumo
-Estruturas de repetição:
+Resuminho
+
 1) if
 --> Examina uma ou mais condições e decide quais instruções serão executadas dependendo da veracidade da informação.
 
@@ -31,3 +31,4 @@ Estruturas de repetição:
 Sinais de comparação:
 >(maior que) // < (menor que) // >= (maior ou igual) // <= (menor ou igual) 
 != (não igual ou diferente) // == (igual)
+-------------------------------------------------------------------------------------
