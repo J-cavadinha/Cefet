@@ -1,0 +1,44 @@
+Resuminho
+Switch
+
+--> Usado para faze testes condicionais
+Exemplo de pseudocódigo:
+
+      Escolha (Variável)
+      Inicio
+         Caso (Valor1): 
+            Instruções;
+
+         Caso (Valor2): 
+           Instruções;
+
+         Caso (ValorN): 
+           Instruções;
+      Fim;
+
+Exemplo retirado do youtube:
+
+          switch(num)
+          {
+            case 1:
+              printf("Domingo"); //*comando a ser executado caso 'case 1' (num == 1) seja verdadeiro
+              break;
+            case 2:
+              printf("Segunda");
+              break;
+            case 3:
+              printf("Terca");
+              break;
+            case 4:
+              printf("Quarta");
+              break;
+            case 5:
+              printf("Quinta");
+              break;
+            case 6:
+              printf("Sexta");
+              break;
+            case 7:
+              printf("Sabado");
+              break;
+  ------------------------------------------------------------------------------------------
