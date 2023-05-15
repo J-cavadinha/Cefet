@@ -1,3 +1,4 @@
+//15/05/23 printf da função não aparecendo
 #include<stdio.h>
 float pagamento_dinheiro (float conta)
 {
@@ -21,7 +22,7 @@ int main()
 	printf("Valor a ser pago: ");
 	scanf("%f",&vconta);
 	printf("Digite o metodo de pagamento: ");
-	scanf(" &c ",&metodopg);
+	scanf(" %C ",&metodopg);
 	
 	if (metodopg == 'C' || metodopg == 'D')
 		printf("Sem troco");
