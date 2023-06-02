@@ -1,3 +1,4 @@
+//Não sei se está certo, confio em Deus
 #include<stdio.h>
 
 struct depto
