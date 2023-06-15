@@ -1,0 +1,45 @@
+#include<stdio.h>
+#define TOT 20
+#define MAX 31
+
+struct aluno{
+	char nome[MAX];
+	float media; 
+};
+typedef struct aluno Taluno;
+
+void exibe(Taluno v[], float mdturma){
+	int i;
+	for(i = 0; i < TOT; i++){
+		
+		printf("\n%-30s\t%.1f\t", v[i].nome, v[i].media);
+		if(v[i].media > mdturma){
+		printf("Acima");
+	}
+		else if(v[i].media == mdturma){
+			printf("na media\n");
+		}
+			else{
+				printf("ya abaixo");
+			}
+		
+	}
+	
+}
+
+int main(){
+	Taluno alunos[TOT];
+	float mdturma, nota1, nota2, soma=0;
+	int i;
+	
+	for(i = 0; i < TOT; i++){
+		printf("Digite o nome do aluno e a suas 2 notas: \n");
+		scanf("%[^\n]%f%f", alunos[i].nome, &nota1, &nota2);
+		alunos[i].media = (nota1 + nota2)/2;
+		soma += alunos[i].media;
+	}
+	mdturma = soma / TOT;
+	exibe(alunos, mdturma);
+	
+	return 0;
+}
