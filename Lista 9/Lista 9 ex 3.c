@@ -24,7 +24,7 @@ void exibe (Taluno aluno_a[], float mdt)
 }
 int main()
 {
-	int i, cont;
+	int i;
 	float mdt = 0, nota1, nota2;
 	Taluno aluno_a[TOT];
 	for(i=0; i < TOT; i++)
