@@ -29,16 +29,14 @@ int main()
 	Taluno aluno_a[TOT];
 	for(i=0; i < TOT; i++)
 	{
-		printf("Digite seu nome e suas duas notas: ");
-		scanf(" %s%f%f", &aluno_a[i].nome, &nota1, &nota2);
+		printf("Digite seu nome: ");
+		scanf(" %30[^\n]", &aluno_a[i].nome);
+		printf("Digite suas duas notas: ");
+		scanf("%f%f", &nota1, &nota2);
 		aluno_a[i].media = (nota1 + nota2)/2;
-	}
-	for(cont=0; cont < TOT; cont++)
-	{
 		mdt = mdt + aluno_a[i].media;
-		if (cont == TOT -1)
-			mdt = mdt / cont;
 	}
+	mdt = mdt/TOT;
 	exibe(aluno_a, mdt);
 	return 0;
 }
