@@ -1,6 +1,6 @@
 // Selection Sort
 #include<stdio.h>
-void test(int v[]){
+void selection(int v[]){			//Exemplo Selection Sort
 	int menor, aux;
 	for(int i=0; i<5-1; i++){
 		menor = i;
@@ -18,12 +18,27 @@ void test(int v[]){
 	}
 }
 
+void bubble(int v[]){				//Exemplo Bubble Sort
+	for(int i=0; i<n; i++){
+		for(int j=i+1; j<n; j++){
+			if(v[i]>v[j]){
+				int aux = v[i];
+				v[i]=v[j];
+				v[j]=aux;
+			}
+		}
+	}
+	for(int w=0; w<5; w++){
+		printf("%d\n", v[w]);
+}
+
+
 int main(){
 	int v[5];
-	printf("Digite uma série de números (5): ");
+	printf("Digite 5 numeros: ");
 	for(int k=0; k<5; k++){
 		scanf("%d", &v[k]);
 	}
-	test(v);
+	selection(v);
 	return 0;
 }
