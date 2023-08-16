@@ -8,7 +8,7 @@ organizado.
 
 #include<stdio.h>
 
-void bubble(int v[]){				//Exemplo Bubble Sort
+/* void bubble(int v[]){				//Exemplo Bubble Sort
 	for(int i=0; i<5; i++){
 		for(int j=i+1; j<5; j++){
 			if(v[i]>v[j]){
@@ -22,7 +22,7 @@ void bubble(int v[]){				//Exemplo Bubble Sort
 		printf("%d\n", v[w]);
 	}
 }
-
+*/
 int main(){
 	int v[5];
 	printf("Digite 5 números: ");
@@ -33,7 +33,7 @@ int main(){
 	return 0;
 }
 
-/*void bubble_otimizado (int v[]){
+void bubble_otimizado (int v[]){
 
   for (int step = 0; step < 5 - 1; ++step) { // Loop que acessa cada elemento
     
@@ -50,5 +50,11 @@ int main(){
         swapped = 1;
       }
     }
+	if (swapped == 0){ // Se não tiver sido feito a troca, encerra o loop
+		break;
+	}
+	}
+	for(int w=0; w<5; w++){
+		printf("%d\n", v[w]);
+	}
 }
-} */
