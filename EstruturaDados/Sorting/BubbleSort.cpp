@@ -23,17 +23,8 @@ organizado.
 	}
 }
 */
-int main(){
-	int v[5];
-	printf("Digite 5 números: ");
-	for(int k=0; k<5; k++){
-		scanf("%d", &v[k]);
-	}
-	bubble_otimizado(v);
-	return 0;
-}
 
-void bubble_otimizado (int v[]){
+void bubbleotimizado (int v[]){
 
   for (int step = 0; step < 5 - 1; ++step) { // Loop que acessa cada elemento
     
@@ -46,15 +37,22 @@ void bubble_otimizado (int v[]){
         int temp = v[i];
         v[i] = v[i + 1];
         v[i + 1] = temp;
-        
-        swapped = 1;
+         swapped = 1;
       }
     }
-	if (swapped == 0){ // Se não tiver sido feito a troca, encerra o loop
-		break;
+	if (swapped == 0) break;// Se não tiver sido feito a troca, encerra o loop
 	}
+}
+
+int main(){
+	int v[5];
+	printf("Digite 5 números: ");
+	for(int k=0; k<5; k++){
+		scanf("%d", &v[k]);
 	}
-	for(int w=0; w<5; w++){
-		printf("%d\n", v[w]);
+	bubbleotimizado(v);
+    for(int w=0; w<5; w++){ // Exibe
+		printf("%d\t", v[w]);
 	}
+	return 0;
 }
