@@ -1,6 +1,9 @@
-// Selection Sort
+/* Selection Sort
+É o método de sorting que percorre o array, compara-se o 1o com o 2o, guarda o menor numa variável
+e depois compara o 2o com o 3o... até o final da array, depois faz denovo... até o fim
+*/
 #include<stdio.h>
-void selection(int v[]){			//Exemplo Selection Sort
+void selection(int v[]){			
 	int menor, aux;
 	for(int i=0; i<5-1; i++){
 		menor = i;
