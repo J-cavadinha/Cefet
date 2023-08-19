@@ -10,9 +10,9 @@ Ideal para pequenos arrays que necessitem de poucas alterações. */
 // Código
 #include<stdio.h>
 void InsertionSort(int v[]){
-    for(int i=0; i<5; i++){
+    for(int i=1; i<6; i++){
         int key = v[i];
-        int j = i - 1;
+        int j = i - 1; 
         while(key < v[j] && j>=0){
             v[j+1] = v[j];
             --j;
@@ -21,27 +21,12 @@ void InsertionSort(int v[]){
     }
 }
 
-void Visualizacao(int v[]){
-    for(int i=0; i<5; i++){
-        printf("%d\n", v[i]);
-    }
-}
-
-void inicializa(int v[]){
-    for(int i=0; i<5; i++){
-        v[i] = 0;
-    }
-}
-
 int main(){
-    int v[5];
-    inicializa(v);
-    printf("Digite x números: ");
-    for(int i=0; i<5; i++){
-        scanf("%d", &v[i]);
-    }
+    int v[] = {25, 10, 6, 15, 4, 11};
     InsertionSort(v);
-    printf("Números em ordem ascendente: ");
-    Visualizacao(v);
+    printf("Números em ordem ascendente:\n");
+    for(int i=0; i<6; i++){
+        printf("%d\t", v[i]);
+    }
     return 0;
 }
