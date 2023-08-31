@@ -1,16 +1,16 @@
 /* Insertion Sort
-Começa no 1o elemento da array, guarda o elemento seguinte em uma variável.
-Caso o 1o elemento seja maior que a variável, ele troca o valor do 2o elemento pelo primeiro e troca o valor do 1o pela variável.
-Agora ele guarda o 3o elemento na variável e compara com o 2o, caso TRUE, reproduz o processo acima e faz a nova comparação
-com o 1o elemento. */
+   Inicia selecionando uma variável chave, que recebe oo valor da 2 posição, e 'j'que recebe i-1
+   Enquanto chave for menor que o elemento na posição 'j' e 'j' for maior ou = a 0
+   a posição 'j'+1 recebe o valor da pos. 'j', e 'j' é decrescido 1, até o while encerrar
+   Ao fim do while temos que j = -1, então a posição j+1 recebe o valor da variável chave.
 
-/* Processo demorado, pior case possível = ter que trocar todos os elementos de posição.
-Ideal para pequenos arrays que necessitem de poucas alterações. */
+   Útil para pequenos arrays
+*/
 
 // Código
 #include<stdio.h>
-void InsertionSort(int v[]){
-    for(int i=1; i<6; i++){
+void InsertionSort(int v[], int n){
+    for(int i=1; i<n; i++){
         int key = v[i];
         int j = i - 1; 
         while(key < v[j] && j>=0){
@@ -22,10 +22,16 @@ void InsertionSort(int v[]){
 }
 
 int main(){
-    int v[] = {25, 10, 6, 15, 4, 11};
-    InsertionSort(v);
-    printf("Números em ordem ascendente:\n");
-    for(int i=0; i<6; i++){
+    int n;
+    scanf("%d", &n);
+    int v[n];
+    for(int i=0; i<n; i++){
+        scanf("%d", &v[i]);
+    }
+
+    InsertionSort(v, n);
+
+    for(int i=0; i<n; i++){
         printf("%d\t", v[i]);
     }
     return 0;
