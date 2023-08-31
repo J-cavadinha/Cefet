@@ -1,16 +1,16 @@
-/* Bubble Sort - começa com o 1o elemento do array, compara então com o 2o
-caso o segundo seja menor, é feita a troca deles(caso a ordem preferida seja a crescente) com o
-auxílio de uma outra variável. Isso é realizado um número x de vezes, mesmo que o array já esteja
-organizado.
-*/
+/* Bubble Sort
+   Através de loops 'for', compara o primeiro elemento com o segundo, depois o primeiro elemento com o terceiro...
+   Após percorrer todo o array; compara-se o segundo elemento com o terceiro, depois o segundo com o quarto...
+   Realiza a troca de elementos com uma variável auxiliar
 
-// Processo demorado e passível de otimização
+   Apenas útil para pequenos arrays devido ao tempo para processar uma array inteira.
+*/
 
 #include<stdio.h>
 
-/* void bubble(int v[]){				//Exemplo Bubble Sort
-	for(int i=0; i<5; i++){
-		for(int j=i+1; j<5; j++){
+void bubble(int v[], int n){				//Exemplo Bubble Sort
+	for(int i=0; i<n; i++){
+		for(int j=i+1; j<n; j++){
 			if(v[i]>v[j]){
 				int aux = v[i];
 				v[i]=v[j];
@@ -18,13 +18,9 @@ organizado.
 			}
 		}
 	}
-	for(int w=0; w<5; w++){
-		printf("%d\n", v[w]);
-	}
 }
-*/
 
-void bubbleotimizado (int v[]){
+/*void bubbleotimizado (int v[]){
 
   for (int step = 0; step < 5 - 1; ++step) { // Loop que acessa cada elemento
     
@@ -42,16 +38,18 @@ void bubbleotimizado (int v[]){
     }
 	if (swapped == 0) break;// Se não tiver sido feito a troca, encerra o loop
 	}
-}
+} */
 
 int main(){
-	int v[5];
-	printf("Digite 5 números: ");
-	for(int k=0; k<5; k++){
+	int n;
+	scanf("%d", &n);
+	int v[n];
+	for(int k=0; k<n; k++){
 		scanf("%d", &v[k]);
 	}
-	bubbleotimizado(v);
-    for(int w=0; w<5; w++){ // Exibe
+
+	bubble(v, n);
+    for(int w=0; w<n; w++){ // Exibe
 		printf("%d\t", v[w]);
 	}
 	return 0;
