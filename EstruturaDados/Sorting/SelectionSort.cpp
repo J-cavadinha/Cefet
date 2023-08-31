@@ -1,13 +1,16 @@
 /* Selection Sort
-É o método de sorting que percorre o array, compara-se o 1o com o 2o, guarda o menor numa variável
-e depois compara o 2o com o 3o... até o final da array, depois faz denovo... até o fim
+   Consiste em 2 loops 'for', no qual o loop interno faz as comparações, percorrendo o array todo, e após ter realizado
+   todo o ciclo (até que j<n), o loop externo realiza as mudanças, troca o primeiro elemento com o menor, e o último
+   com o maior.
+
 */
+
 #include<stdio.h>
-void selection(int v[]){			
+void selection(int v[], int n){			
 	int menor, aux;
-	for(int i=0; i<5-1; i++){
+	for(int i=0; i<n-1; i++){
 		menor = i;
-		for(int j=i+1; j<5; j++)
+		for(int j=i+1; j<n; j++)
 		{
 			if(v[menor]>v[j])
 			menor = j;
@@ -16,17 +19,21 @@ void selection(int v[]){
 		v[i]=v[menor];
 		v[menor]=aux;
 	}
-	for(int w=0; w<5; w++){
-		printf("%d\n", v[w]);
-	}
 }
 
 int main(){
-	int v[5];
-	printf("Digite 5 números: ");
-	for(int k=0; k<5; k++){
+	int n;
+	scanf("%d", &n);
+	int v[n];
+	for(int k=0; k<n; k++){
 		scanf("%d", &v[k]);
 	}
-	selection(v);
+
+	selection(v, n);
+
+	for(int i=0; i<n; i++){
+		printf("%d\t", v[i]);
+	}
+
 	return 0;
 }
