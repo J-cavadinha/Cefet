@@ -12,7 +12,7 @@ https://www.programiz.com/dsa/merge-sort#google_vignette */
 #include<stdio.h>
 
 void Intercala(int v[], int inicio, int fim, int meio){ // Função que une os arrays
-    int i, aux[6], posl = inicio, inicioA1 = inicio, inicioA2 = meio+1; // Declaração de var
+    int i, aux[fim], posl = inicio, inicioA1 = inicio, inicioA2 = meio+1; // Declaração de var
     while(inicioA1 <= meio && inicioA2 <= fim){ // inicio menor/igual ao meio e meio+1 menor/igual ao fim
         if(v[inicioA1] > v[inicioA2]){    // Se inicio menor que meio +1
             aux[posl]=v[inicioA2];  // Var auxiliar[inicio] = posição vetor[meio+1]
@@ -48,11 +48,17 @@ void MergeSort(int v[], int inicio, int fim){   //Função que realiza as divis�
 }
 
 int main(){
-    int v[]={10, 8, 2, 3, 9, 4};
+    int n;
+    scanf("%d", &n);
 
-    MergeSort(v,0,5);
+    int v[n];
+    for(int i=0; i<n; i++){
+        scanf("%d", &v[i]);
+    }
+
+    MergeSort(v,0,n-1); 
     
-    for (int i = 0; i < 6; i++) {
+    for (int i = 0; i < n; i++) {
         printf("%d ", v[i]);
     }
     return 0;
