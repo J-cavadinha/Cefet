@@ -1,4 +1,4 @@
-// EDA - Implementação de Busca Sequencial
+// EDA - ImplementaÃ§Ã£o de Busca Sequencial
 #include<stdio.h>
 
 int search(int v[], int n, int num){
