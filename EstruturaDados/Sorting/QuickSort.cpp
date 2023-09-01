@@ -35,17 +35,18 @@ void QuickSort(int v[], int menor, int maior){
 }
 
 int main(){
-    int v[3];
+    
+    int n;
+    scanf("%d", &n);
 
-    printf("Digite 3 números:");
-    for(int i=0; i<2; i++){
-    scanf("%d \n", &v[i]);
+    int v[n];
+    for(int i=0; i<n; i++){
+        scanf("%d", &v[i]);
     }
 
-    QuickSort(v, 0, 3-1);
+    QuickSort(v, 0, n-1);
 
-    printf("Array: ");
-    for(int k=0; k<3; k++){
+    for(int k=0; k<n; k++){
         printf("%d\t", v[k]);
     }
     return 0;
