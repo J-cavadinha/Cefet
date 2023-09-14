@@ -1,4 +1,4 @@
-/* Bubble Sort
+/* Bubble Sort - Complexidade O(nˆ2)
    Através de loops 'for', compara o primeiro elemento com o segundo, depois o primeiro elemento com o terceiro...
    Após percorrer todo o array; compara-se o segundo elemento com o terceiro, depois o segundo com o quarto...
    Realiza a troca de elementos com uma variável auxiliar
@@ -8,17 +8,17 @@
 
 #include<stdio.h>
 
-void bubble(int v[], int n){				//Exemplo Bubble Sort
-	for(int i=0; i<n; i++){
-		for(int j=i+1; j<n; j++){
-			if(v[i]>v[j]){
+void bubble(int v[], int n){ 
+	for(int i=0; i<n; i++){	// O(n)
+		for(int j=i+1; j<n; j++){ // O(n)
+			if(v[i]>v[j]){ // O(1)
 				int aux = v[i];
 				v[i]=v[j];
 				v[j]=aux;
 			}
 		}
 	}
-}
+} // Complexidade -> O(n) * O(n) = O(nˆ2)
 
 /*void bubbleotimizado (int v[]){
 
