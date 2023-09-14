@@ -1,4 +1,4 @@
-/* Insertion Sort
+/* Insertion Sort - Complexidade O(nˆ2)
    Inicia selecionando uma variável chave, que recebe oo valor da 2 posição, e 'j'que recebe i-1
    Enquanto chave for menor que o elemento na posição 'j' e 'j' for maior ou = a 0
    a posição 'j'+1 recebe o valor da pos. 'j', e 'j' é decrescido 1, até o while encerrar
@@ -7,19 +7,18 @@
    Útil para pequenos arrays
 */
 
-// Código
 #include<stdio.h>
 void InsertionSort(int v[], int n){
-    for(int i=1; i<n; i++){
+    for(int i=1; i<n; i++){ // O(n)
         int key = v[i];
         int j = i - 1; 
-        while(key < v[j] && j>=0){
+        while(key < v[j] && j>=0){ // O(n)
             v[j+1] = v[j];
             --j;
         }
         v[j+1] = key;
     }
-}
+} // Complexidade -> O(n) * O(n) = O(nˆ2)
 
 int main(){
     int n;
