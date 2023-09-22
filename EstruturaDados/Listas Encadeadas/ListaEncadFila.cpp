@@ -12,18 +12,20 @@ void enqueue();
 void dequeue();
 bool listaVazia();
 void leituralista();
+void comprimentolista();
 
 int main(){
 	int op;
 	
 	do{
-		cout << "Escolha 1-Enqueue\t2-Dequeue\t3-Visualização: ";
+		cout << "Escolha 1-Enqueue\t2-Dequeue\t3-VisualizaÃ§Ã£o\t4-Comprimento: ";
 		cin >> op;
 		switch(op){
 			case 1: enqueue(); break;
 			case 2: dequeue(); break;
 			case 3: leituralista(); break;
-			default: cout << "\nDígito inválido";
+			case 4: comprimentolista(); break;
+			default: cout << "\nDÃ­gito invÃ¡lido";
 		}
 	} while(op!=0);
 }
@@ -71,3 +73,17 @@ void leituralista(){
 		cout << endl;
 	}
 }
+
+/* Lista de ExercÃ­cios */
+// 1
+void comprimentolista(){
+	int count = 0;
+	noPtr roll = topo;
+	while(roll != NULL){
+			count += 1;
+			roll = roll->prox;
+		}
+	cout << count << " \n";
+}
+
+// 2
