@@ -1,4 +1,5 @@
 // Lista encadeada em ordem - um elemento é inserido na posição tal qual a lista continue em ordem.
+// Implemenar funções de visualização crescente e decrescente
 #include <iostream>
 using namespace std;
 
@@ -10,14 +11,17 @@ struct no
 typedef struct no *noPtr;
 
 noPtr inicio = NULL;
-noPtr fim = NULL;
+noPtr fim = NULL; 
+int counter = 0;
 
 void inserir();
 int menu();
-void consultar();
+int consultar();
 int retirar();
 void leitura();
 void limparlista();
+bool listavazia();
+void visualizacao_decres();
 
 int main()
 {
@@ -27,6 +31,9 @@ int main()
 		op = menu();
 		switch (op)
 		{
+		case 0:
+			limparlista(); 
+			return 0;
 		case 1:
 			inserir();
 			break;
@@ -36,7 +43,11 @@ int main()
 		case 3:
 			retirar();
 			break;
-		default: limparlista(); return 0;
+		case 4:
+			visualizacao_decres();
+			break;
+		default:
+			cout << "Dígito inválido" << endl;
 		}
 	} while (op != 0);
 }
@@ -48,10 +59,11 @@ void inserir()
 	cout << "Digite o valor do elemento: ";
 	cin >> p->info;
 
-	if (inicio == NULL)
+	if (listavazia())
 	{
 		p->prox = inicio;
 		inicio = p;
+		counter++;
 	}
 	else
 	{
@@ -65,21 +77,24 @@ void inserir()
 		{
 			p->prox = aux;
 			inicio = p;
+			counter++;
 		}
 		else
 		{
 			p->prox = aux;
 			ant->prox = p;
+			counter++;
 		}
 	}
 }
 
-void consultar()
+int consultar()
 {
 	noPtr p = inicio;
-	int x, x2;
+	int x;
 	bool achei = false;
-	if (inicio != NULL)
+	if (listavazia()) cout << "Lista vazia!";
+	else
 	{
 		cout << "Digite o elemento a ser procurado: ";
 		cin >> x;
@@ -87,23 +102,21 @@ void consultar()
 		{
 			if (p->info == x)
 			{
-				cout << "Elemento encontrado!\n";
+				cout << "Elemento encontrado!" << endl;
 				achei = true;
 			}
-		}
-		if (achei != true) cout << "Elemento não encontrado";
-		else{
-			cout << "Lista vazia\n";
 			p = p->prox;
 		}
+		if (!achei) cout << "Elemento não encontrado" << endl;
+	
+	return 0;
 	}
 }
-
 
 int menu()
 {
 	int x;
-	cout << "1 - Inserir\t 2 - Consultar \t 3 - Retirar \t Qualquer tecla para encerrar: ";
+	cout << "1 - Inserir\t 2 - Consultar \t 3 - Retirar \t 4 - Visualizar em decrescente\t 0 - Encerrar: ";
 	cin >> x;
 	return x;
 }
@@ -127,19 +140,20 @@ int retirar()
 			else
 				pre_roll->prox = roll->prox;
 			delete (roll);
-			cout << "Elemento retirado.";
+			cout << "Elemento retirado." << endl;
+			counter--;
 			return 0;
 		}
 		pre_roll = roll;
 		roll = roll->prox;
 	}
-	cout << "Elemento não encontrado.";
+	cout << "Elemento não encontrado." << endl;
 	return 0;
 }
 
 void leitura()
 {
-	if (inicio == NULL)
+	if (listavazia())
 		cout << "Lista vazia!";
 	else
 	{
@@ -150,6 +164,7 @@ void leitura()
 			cout << roll->info << " ";
 			roll = roll->prox;
 		}
+		cout << endl;
 	}
 }
 
@@ -160,4 +175,25 @@ void limparlista() {
         inicio = inicio->prox;
         delete temp;
     }
+}
+
+bool listavazia(){
+	return inicio == NULL;
+}
+
+void visualizacao_decres(){
+	noPtr roll = inicio;
+	int v[counter];
+
+	if(listavazia()) cout << "Lista vazia" << endl;
+	 else{
+		for(int i=0; i<counter; i++){
+			v[i] = roll->info;
+			roll = roll->prox;
+		}
+	 }
+	for(int j=counter-1; j>=0; j--){
+		cout << v[j] << " ";
+	}
+	cout << endl;
 }
