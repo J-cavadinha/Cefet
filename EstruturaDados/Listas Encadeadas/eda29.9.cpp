@@ -52,7 +52,7 @@ int main()
 	} while (op != 0);
 }
 
-void inserir()
+void inserir() // O(n)
 {
 	noPtr aux, ant, p = new no;
 
@@ -88,7 +88,7 @@ void inserir()
 	}
 }
 
-int consultar()
+int consultar() // O(n)
 {
 	noPtr p = inicio;
 	int x;
@@ -113,7 +113,7 @@ int consultar()
 	}
 }
 
-int menu()
+int menu() // O(1)
 {
 	int x;
 	cout << "1 - Inserir\t 2 - Consultar \t 3 - Retirar \t 4 - Visualizar em decrescente\t 0 - Encerrar: ";
@@ -121,7 +121,7 @@ int menu()
 	return x;
 }
 
-int retirar()
+int retirar() // O(n)
 { // Conectar o nó que vem antes de tchaunum ao nó que vem depois
 	int tchaunum;
 	leitura();
@@ -151,7 +151,7 @@ int retirar()
 	return 0;
 }
 
-void leitura()
+void leitura() // O(1)
 {
 	if (listavazia())
 		cout << "Lista vazia!";
@@ -168,7 +168,7 @@ void leitura()
 	}
 }
 
-void limparlista() {
+void limparlista() { // O(n)
     noPtr temp;
     while (inicio != NULL) {
         temp = inicio;
@@ -177,11 +177,11 @@ void limparlista() {
     }
 }
 
-bool listavazia(){
+bool listavazia(){ // O(n)
 	return inicio == NULL;
 }
 
-void visualizacao_decres(){
+void visualizacao_decres(){ // O(n)
 	noPtr roll = inicio;
 	int v[counter];
 
