@@ -117,6 +117,7 @@ int excluircidade()
             }
             delete (roll);
             cout << "Cidade retirada!" << endl;
+            qtdprefeitos--;
             return 0;
         }
         pre_roll = roll;
@@ -136,7 +137,7 @@ void listagem()
         cout << "Lista: ";
         while (roll != NULL)
         {
-            cout << roll->nome_cidade << roll->nome_prefeito << roll->qtdhabitantes << " \t";
+            cout << roll->nome_cidade << " ";
             roll = roll->prox;
         }
         cout << endl;
