@@ -43,7 +43,7 @@ void cadastro_cliente(){
     cout << "Digite o número da sua conta: ";
     cin >> p->numero_conta;
     while(contadup(p->numero_conta)){
-        cout << "Conta já existente, tente novamente." << endl;
+        cout << "Conta já existente, tente novamente: " << endl;
         cin >> p->numero_conta;
     }
     cout << "Digite o seu nome: ";
