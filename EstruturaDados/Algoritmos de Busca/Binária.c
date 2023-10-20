@@ -1,15 +1,15 @@
-// EDA - ImplementaÁ„o de Busca Bin·ria
+// EDA - Implementa√ß√£o de Busca Bin√°ria
 
 #include<stdio.h>
 
 void searchbi(int v[], int x, int inicio, int fim){
 	int meio = (inicio + fim)/2;
 	
-	// Procura se È == ao meio
+	// Procura se √© == ao meio
 	if(x == v[meio]){
 		printf("%d", meio+1);
 	}
-	// Caso n„o seja, verifica se È maior ou menor que o meio
+	// Caso n√£o seja, verifica se √© maior ou menor que o meio
 	else{
 		if(x<v[meio]){
 			if(x<inicio){
