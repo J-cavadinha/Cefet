@@ -46,6 +46,7 @@ void inserir(noPtr * i){
         (*i)->ant = p;
     }
     *i = p;
+    cout << "Elemento adicionado!" << endl;
 }
 
 void retirar(noPtr *i){
