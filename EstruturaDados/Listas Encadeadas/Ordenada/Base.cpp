@@ -24,7 +24,7 @@ int main(){
 			case 2: consultar(); break;
 			case 3: retirar(); break;
             case 4: return 0;
-			default: cout << "Digito invalido.\n";
+			default: cout << "Digito inválido.\n";
 		}
 	}while(op!=0);
     return 0;
