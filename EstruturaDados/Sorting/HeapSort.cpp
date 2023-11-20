@@ -37,15 +37,15 @@ void heap(int A[], int t){
 }
 
 void descer(int A[], int i, int q){
-    int d = 2*i +2;
-    int e = 2*i +1;
+    int dir = 2*i +2;
+    int esq = 2*i +1;
     int maior = i;
 
-    if(d <= q && A[d]>A[i]){
-        maior = d;
+    if(dir <= q && A[dir]>A[i]){
+        maior = dir;
     }
-    if(e <= q && A[e] > A[maior]){
-        maior = e;
+    if(esq <= q && A[esq] > A[maior]){
+        maior = esq;
     }
     if(maior != i){
         troca(&A[i], &A[maior]);
