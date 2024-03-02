@@ -167,26 +167,26 @@ noPtr balancear(noPtr p)
 
     if (fator_balanceamento == 2)
     {
-        df = p->dir->hEsq - p->dir->hDir;
+        df = p->dir->hDir - p->dir->hEsq;
         if (df >= 0)
-            p = RSD(p);
+            p = RSE(p);
         else
         {
-            p->dir = RSE(p->dir);
-            p = RSD(p);
+            p->dir = RSD(p->dir);
+            p = RSE(p);
         }
     }
     else if (fator_balanceamento == -2)
     {
-        df = p->esq->hEsq - p->esq->hDir;
-        if (df >= 0)
-        { // RSD + RSE
-            p->esq = RSD(p->esq);
-            p = RSE(p);
+        df = p->esq->hDir - p->esq->hEsq;
+        if (df <= 0)
+        {
+            p = RSD(p);
         }
         else
         {
-            p = RSE(p);
+            p->esq = RSE(p->esq);
+            p = RSD(p);
         }
     }
     return p;
