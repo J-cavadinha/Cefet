@@ -1,4 +1,4 @@
-public class TesteCasa {
+public class CasaTeste {
     public static void main(String[] args) {
 
         Casa casa1 = new Casa();
