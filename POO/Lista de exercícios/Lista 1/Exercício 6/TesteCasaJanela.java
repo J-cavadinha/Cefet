@@ -9,5 +9,8 @@ public class TesteCasaJanela {
         casa1.numero = 20;
         casa1.janela = janela1;
 
+        System.out.println("A casa de cor " + casa1.cor.toLowerCase() + " de número " + casa1.numero +
+                ", tem uma janela " + janela1.cor.toLowerCase() + " feita de " + janela1.material.toLowerCase());
+
     }
 }
