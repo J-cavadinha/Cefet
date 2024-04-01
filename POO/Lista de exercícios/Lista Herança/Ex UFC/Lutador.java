@@ -1,10 +1,11 @@
 import java.lang.Math;
 
-public class Lutador {
+class Lutador {
 
     private String nome;
     private int idade;
     private double peso;
+    private int categoria;
 
     Lutador(String nome, int idade, double peso) {
         this.nome = nome;
@@ -24,20 +25,24 @@ public class Lutador {
         return this.peso;
     }
 
+    public int getCategoria() {
+        return this.categoria;
+    }
+
     // Questão 4
-    int j = 0;
+    public static Lutador[] possiveisLutas(Lutador[] lutadores, int posLutadorEscolhido) {
+        Lutador escolhido = lutadores[posLutadorEscolhido];
+        Lutador[] novoArrayLutadores = new Lutador[lutadores.length - 1];
 
-    public void possiveisLutas(Lutador[] lutadores) {
-        Lutador[] lutadores_aptos = new Lutador[10];
-
+        int novoIndex = 0;
         for (int i = 0; i < lutadores.length; i++) {
-            if (lutadores[i].getPeso() == this.getPeso()) {
-                if (lutadores[i].getNome() != this.getNome()) {
-                    lutadores_aptos[j] = lutadores[i];
-                    j++;
-                }
+            if (i != posLutadorEscolhido && lutadores[i].getCategoria() != escolhido.getCategoria()) {
+                System.out.println("Lutas possíveis: ");
+                System.out.println(escolhido.getNome() + " x " + lutadores[i].getNome());
+                novoArrayLutadores[novoIndex++] = lutadores[i];
             }
         }
+        return novoArrayLutadores;
     }
 
     // Questão 5
@@ -55,22 +60,35 @@ public class Lutador {
         }
     }
 
+    public String impressao(String nome, int idade, double peso) {
+        return nome + "/" + idade + "/" + peso;
+    }
+
     int k = 0;
 
-    public Lutador sorteioLuta(Lutador[] lutadores) {
-        Lutador[] lut_categoria = new Lutador[10];
+    public static Lutador sorteioLuta(Lutador[] lutadores) {
+        int count = 0;
 
         for (int i = 0; i < lutadores.length; i++) {
-            if (lutadores[i].categoriaLutador() == this.categoriaLutador()) {
-                lut_categoria[k] = lutadores[i];
-                k++;
+            if (lutadores[i] != null) {
+                count++;
             }
         }
 
-        int max = lut_categoria.length - 1;
+        Lutador[] arraySorteioFormatado = new Lutador[count];
+
+        int index = 0;
+        for (int k = 0; k < arraySorteioFormatado.length; k++) {
+            if (lutadores[k] != null) {
+                arraySorteioFormatado[index] = lutadores[k];
+                index++;
+            }
+        }
+
+        int max = arraySorteioFormatado.length - 1;
         int min = 0;
         int range = max - min;
         int rand = (int) (Math.random() * range) + min;
-        return lut_categoria[rand];
+        return arraySorteioFormatado[rand];
     }
 }

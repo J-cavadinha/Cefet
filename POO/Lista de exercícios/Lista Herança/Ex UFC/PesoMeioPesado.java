@@ -1,5 +1,5 @@
-public class PesoPesado extends Lutador {
-    PesoPesado(String nome, int idade, double peso) {
+public class PesoMeioPesado extends Lutador {
+    PesoMeioPesado(String nome, int idade, double peso) {
         super(nome, idade, peso);
     }
 
@@ -8,7 +8,7 @@ public class PesoPesado extends Lutador {
         return nome + "/" + idade + "/" + peso;
     }
 
-    private int modalidade = 1;
+    private int modalidade = 2;
 
     public int getCategoria() {
         return this.modalidade;
