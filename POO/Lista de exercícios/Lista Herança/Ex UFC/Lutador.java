@@ -34,13 +34,14 @@ class Lutador {
         Lutador escolhido = lutadores[posLutadorEscolhido];
         Lutador[] novoArrayLutadores = new Lutador[lutadores.length - 1];
 
+        System.out.println("Lutas possíveis: ");
         int novoIndex = 0;
         for (int i = 0; i < lutadores.length; i++) {
-            if (i != posLutadorEscolhido && lutadores[i].getCategoria() != escolhido.getCategoria()) {
-                System.out.println("Lutas possíveis: ");
+            if (i != posLutadorEscolhido && lutadores[i].getCategoria() == escolhido.getCategoria()) {
                 System.out.println(escolhido.getNome() + " x " + lutadores[i].getNome());
                 novoArrayLutadores[novoIndex++] = lutadores[i];
             }
+            System.out.println();
         }
         return novoArrayLutadores;
     }
@@ -60,8 +61,8 @@ class Lutador {
         }
     }
 
-    public String impressao(String nome, int idade, double peso) {
-        return nome + "/" + idade + "/" + peso;
+    public String impressao(String nome, int idade, double peso, int categoria) {
+        return nome + "/" + idade + "/" + peso + "/" + "/" + categoria;
     }
 
     int k = 0;

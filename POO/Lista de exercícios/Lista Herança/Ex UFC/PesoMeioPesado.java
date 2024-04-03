@@ -4,8 +4,8 @@ public class PesoMeioPesado extends Lutador {
     }
 
     @Override
-    public String impressao(String nome, int idade, double peso) {
-        return nome + "/" + idade + "/" + peso;
+    public String impressao(String nome, int idade, double peso, int categoria) {
+        return nome + "/" + idade + "/" + peso + "/" + categoria;
     }
 
     private int modalidade = 2;
