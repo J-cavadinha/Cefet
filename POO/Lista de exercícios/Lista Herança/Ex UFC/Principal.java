@@ -32,10 +32,12 @@ public class Principal {
             }
         }
 
+        System.out.println("\nDigite um número: ");
         int numero = input.nextInt();
         System.out.println(
-                lutadores[numero].impressao(lutadores[numero].getNome(), lutadores[numero].getIdade(),
-                        lutadores[numero].getPeso()));
+                lutadores[numero].impressao(lutadores[numero].getNome(),
+                        lutadores[numero].getIdade(), lutadores[numero].getPeso(),
+                        lutadores[numero].getCategoria()));
 
         Lutador[] novoArrayLutadores = Lutador.possiveisLutas(lutadores, numero);
         Lutador sorteado = Lutador.sorteioLuta(novoArrayLutadores);
@@ -46,7 +48,7 @@ public class Principal {
         // for (int j = 0; j < lutadores.length; j++) {
         // System.out.println(
         // lutadores[j].impressao(lutadores[j].getNome(), lutadores[j].getIdade(),
-        // lutadores[j].getPeso()));
+        // lutadores[j].getPeso(), lutadores[j].getCategoria()));
         // }
 
         input.close();
