@@ -29,6 +29,7 @@ int menu(FILE *arquivo)
 
   int opcao;
   scanf("%d", &opcao);
+  fflush(stdin);
   printf("---------------------------\n");
 
   switch (opcao)
