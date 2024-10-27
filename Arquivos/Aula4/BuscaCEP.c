@@ -1,3 +1,5 @@
+// Arquivo cep_ordenado não foi upado pois é pesado demais.
+
 #include <stdio.h>
 #include <string.h>
 
